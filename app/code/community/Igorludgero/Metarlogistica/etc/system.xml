@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package     Igorludgero_Metarlogistica
+ * @author      Igor Ludgero Miura
+ * @copyright   Igor Ludgero Miura - https://www.igorludgero.com/ - igor@igorludgero.com
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <sections>
+        <carriers>
+            <groups>
+                <metar_logistica translate="label,comment">
+                    <label>[Igorludgero] - Metar Logística Carrier</label>
+                    <comment><![CDATA[<p><img style="width: 324px;" src="//0.kekantoimg.com/GVh_UdV7taqap-GehWsS5Twlwe0=/fit-in/600x600/s3.amazonaws.com/kekanto_pics/pics/508/229508.jpg"/></p><p style="color: #3945b9; font-weight: bolder;">Para mais informações por favor acesse <a style="color: #142673;" href="http://www.metarlogistica.com.br/" target="_blank">nosso site</a> e entre em contato.<p><p style="color: #3945b9; font-weight: bolder;">Esta extensão foi desenvolvida por Igor Ludgero Miura. Para mais informações acesse <a style="color: #142673;" href="https://www.igorludgero.com/" target="_blank">https://www.igorludgero.com/</a>.<p>]]></comment>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <comment>Enable this extension in your store.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <title translate="label,comment">
+                            <label>Title</label>
+                            <comment>Type the title will be showed to your customers.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title>
+                        <import translate="label,comment">
+                            <label>Import .CSV</label>
+                            <comment>Import a CSV files with the latest quotes.</comment>
+                            <frontend_type>import</frontend_type>
+                            <backend_model>metarlogistica/system_config_backend_shipping_quotes</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </import>
+                        <estimated_deadline translate="label,comment">
+                            <label>Show the estimated deadline?</label>
+                            <comment>Enable this option for show the estimated deadline when the customer request the calculation.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </estimated_deadline>
+                        <add_days translate="label,comment">
+                            <label>Add Days to the estimated deadline</label>
+                            <comment>Fill this field to add more days in the estimated deadline. To set the default value stay this field empty.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </add_days>
+                        <add_price translate="label,comment">
+                            <label>Add an additional cost to the shipping final price.</label>
+                            <comment>Fill this field to add an additional value to the final shipping price.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </add_price>
+                        <custom_message translate="label,comment">
+                            <label>Set the custom shipping message</label>
+                            <comment>Set the custom message that will be showed to the customer when he request the shipping calculation. (ex: Entrega em %s. Prazo de %d dia(s) útil(eis).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </custom_message>
+                    </fields>
+                </metar_logistica>
+            </groups>
+        </carriers>
+    </sections>
+</config>
