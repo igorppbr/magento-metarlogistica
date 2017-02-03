@@ -17,7 +17,7 @@ class Igorludgero_Metarlogistica_Block_Adminhtml_Quoteprices extends Mage_Adminh
         parent::__construct();
         $this->_removeButton('add');
         $this->_addButton('add_new', array(
-            'label'   => Mage::helper('consultoras')->__('Add New Quote Price'),
+            'label'   => Mage::helper('metarlogistica')->__('Add New Quote Price'),
             'onclick' => "setLocation('{$this->getUrl('*/*/new')}')",
             'class'   => 'add'
         ));

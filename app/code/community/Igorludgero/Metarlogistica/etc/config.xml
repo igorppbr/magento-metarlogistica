@@ -72,24 +72,6 @@
                 </Igorludgero_Metarlogistica>
             </modules>
         </translate>
-        <menu>
-            <metarlogistica translate="title">
-                <title>Metar Logística</title>
-                <sort_order>800</sort_order>
-                <children>
-                    <quoteprices translate="title" module="metarlogistica">
-                        <sort_order>0</sort_order>
-                        <title>Quote Prices</title>
-                        <action>adminhtml/quoteprices/</action>
-                    </quoteprices>
-                    <settings>
-                        <sort_order>1</sort_order>
-                        <title>Settings</title>
-                        <action>adminhtml/system_config/edit/section/carriers/</action>
-                    </settings>
-                </children>
-            </metarlogistica>
-        </menu>
     </adminhtml>
     <admin>
         <translate>

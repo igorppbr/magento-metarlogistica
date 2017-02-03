@@ -12,8 +12,7 @@ class Igorludgero_Metarlogistica_Adminhtml_QuotepricesController extends Mage_Ad
 
     protected function _isAllowed()
     {
-        return true;
-        //return Mage::getSingleton('admin/session')->isAllowed('system/config/igorludgero_outside');
+        return Mage::getSingleton('admin/session')->isAllowed('metarlogistica/quoteprices');
     }
 
     public function indexAction()
