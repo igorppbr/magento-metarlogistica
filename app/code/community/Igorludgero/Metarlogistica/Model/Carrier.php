@@ -16,6 +16,8 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
     protected $_addPrice;
     protected $_customMessage;
     protected $_enabled;
+    protected $_percent_insurance;
+    protected $_percent_declared;
 
     public function __construct()
     {
@@ -25,6 +27,8 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
         $this->_addPrice = $this->getConfigValue('add_price');
         $this->_customMessage = $this->getConfigValue('custom_message');
         $this->_enabled = $this->getConfigValue('active');
+        $this->_percent_insurance = $this->getConfigValue('percent_insurance');
+        $this->_percent_declared = $this->getConfigValue('percent_nfe_declared');
     }
 
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
@@ -126,8 +130,18 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
             else
                 $finalValue = $quotePrice->getValor();
         }
+
+        $declared = 0;
+        if($this->_percent_declared != "" && is_numeric($this->_percent_declared)){
+            $declared = $finalValue * $this->_percent_declared;
+        }
+        $insurance = 0;
+        if($this->_percent_insurance != "" && is_numeric($this->_percent_insurance)){
+            $insurance = $finalValue * $this->_percent_insurance;
+        }
         if($this->_addPrice)
             $finalValue = $finalValue + $this->_addPrice;
+        $finalValue = $finalValue + $declared + $insurance;
         return $finalValue;
     }
 
