@@ -37,3 +37,7 @@
 "Please select the quote price.","Por favor selecione o valor desejado."
 "Invalid data, please re-input the quote price values.","Valores inválidos, por favor preencha-os novamente."
 "Error saving quote price. Check again the fields.","Erro salvando os valores da entrega. Por favor verifique os campos novamente."
+"% Delivery insurance","% Seguro da entrega"
+"This value will be added to the final shipping value for delivery insurance.","Este valor será adicionado ao valor final da entrega para seguro da mercadoria."
+"% Declared in the electronic invoice","% baseado no declarado na NFE"
+"This value will be added to the final shipping value.","Esta porcentagem será adicionado ao valor final da entrega."
