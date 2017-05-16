@@ -45,9 +45,9 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
 
                 $metarlogisticaQuote = Mage::getModel("metarlogistica/cotacao")->getCollection()->addFieldToFilter("cep_inicio", array('lteq' => $postCode))->addFieldToFilter("cep_fim", array('gteq' => $postCode))->getFirstItem();
 
-                $metarlogisticaQuotePriceCollection = Mage::getModel("metarlogistica/cotacaoprice")->getCollection()->addFieldToFilter("tipo", $metarlogisticaQuote->getTipo())->addFieldToFilter("uf", $metarlogisticaQuote->getUf())->addFieldToFilter("peso_min", array('lteq' => $weight))->addFieldToFilter("peso_max", array('gteq' => $weight));
+                $metarlogisticaQuotePriceCollection = Mage::getModel("metarlogistica/cotacaoprice")->getCollection()->addFieldToFilter("tipo", $metarlogisticaQuote->getTipoCidade())->addFieldToFilter("uf", $metarlogisticaQuote->getUf())->addFieldToFilter("peso_min", array('lteq' => $weight))->addFieldToFilter("peso_max", array('gteq' => $weight));
                 $metarlogisticaQuotePrice = null;
-                if ($metarlogisticaQuotePriceCollection->count() > 1) {
+                if ($metarlogisticaQuotePriceCollection->count() > 0) {
                     $metarlogisticaQuotePrice = $metarlogisticaQuotePriceCollection->getFirstItem();
                 } else {
                     $metarlogisticaQuotePrice = Mage::getModel("metarlogistica/cotacaoprice")->getCollection()->addFieldToFilter("uf", $metarlogisticaQuote->getUf())->setOrder('peso_max', 'DESC')->getFirstItem();
