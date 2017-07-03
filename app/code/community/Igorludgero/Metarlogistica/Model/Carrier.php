@@ -10,7 +10,6 @@
 class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carrier_Abstract implements Mage_Shipping_Model_Carrier_Interface {
 
     protected $_code = 'metarlogistica';
-    protected $_title;
     protected $_estimatedDeadline;
     protected $_addDays;
     protected $_addPrice;
@@ -18,6 +17,7 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
     protected $_enabled;
     protected $_percent_insurance;
     protected $_percent_declared;
+    protected $_showRegion;
 
     public function __construct()
     {
@@ -29,6 +29,7 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
         $this->_enabled = $this->getConfigValue('active');
         $this->_percent_insurance = $this->getConfigValue('percent_insurance');
         $this->_percent_declared = $this->getConfigValue('percent_nfe_declared');
+        $this->_showRegion = $this->getConfigValue('show_region');
     }
 
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
@@ -76,8 +77,8 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
     {
         $rate = Mage::getModel('shipping/rate_result_method');
         $rate->setCarrier($this->_code);
-        $rate->setCarrierTitle($this->_title);
-        $rate->setMethod('metarlogistica');
+        $rate->setCarrierTitle($this->getConfigData('title'));
+        $rate->setMethod($this->_code);
         $rate->setMethodTitle($this->generateMethodTitle($metarlogisticaQuote->getPrazo(), $metarlogisticaQuote->getCidade()));
         $rate->setPrice($this->calculateFinalPrice($weight,$metarlogisticaQuotePrice));
         if($this->_addPrice != "")
@@ -89,7 +90,7 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
 
     private function getConfigValue($path){
         return Mage::getStoreConfig(
-            'carriers/metar_logistica/'.$path,
+            'carriers/metarlogistica/'.$path,
             Mage::app()->getStore()
         );
     }
@@ -101,10 +102,16 @@ class Igorludgero_Metarlogistica_Model_Carrier extends Mage_Shipping_Model_Carri
                 $days = $days + $this->_addDays;
             }
             if($this->_customMessage!=""){
-                return sprintf($this->_customMessage,$city,$days);
+                if($this->_showRegion)
+                    return sprintf($this->_customMessage,$city,$days);
+                else
+                    return sprintf($this->_customMessage,$days);
             }
             else{
-                return sprintf('Entrega em %s. Prazo de %d dia(s) útil(eis).',$city,$days);
+                if($this->_showRegion)
+                    return sprintf('Entrega em %s. Prazo de %d dia(s) útil(eis).',$city,$days);
+                else
+                    return sprintf('Prazo de %d dia(s) útil(eis).',$days);
             }
         }
         else{

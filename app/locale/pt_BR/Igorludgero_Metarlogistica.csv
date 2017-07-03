@@ -41,3 +41,5 @@
 "This value will be added to the final shipping value for delivery insurance.","Este valor será adicionado ao valor final da entrega para seguro da mercadoria."
 "% Declared in the electronic invoice","% baseado no declarado na NFE"
 "This value will be added to the final shipping value.","Esta porcentagem será adicionado ao valor final da entrega."
+"Show the region?","Exibir a região?"
+"Enable this option to show the region the shipping will be delivered.","Habilite esta opção para exibir a região onde a entrega será realizada."

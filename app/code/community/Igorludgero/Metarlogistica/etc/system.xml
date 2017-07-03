@@ -11,9 +11,9 @@
     <sections>
         <carriers>
             <groups>
-                <metar_logistica translate="label,comment">
-                    <label>[Igorludgero] - Metar Logística Carrier</label>
-                    <comment><![CDATA[<p><img style="width: 324px;" src="//0.kekantoimg.com/GVh_UdV7taqap-GehWsS5Twlwe0=/fit-in/600x600/s3.amazonaws.com/kekanto_pics/pics/508/229508.jpg"/></p><p style="color: #3945b9; font-weight: bolder;">Para mais informações por favor acesse <a style="color: #142673;" href="http://www.metarlogistica.com.br/" target="_blank">nosso site</a> e entre em contato.<p><p style="color: #3945b9; font-weight: bolder;">Esta extensão foi desenvolvida por Igor Ludgero Miura. Para mais informações acesse <a style="color: #142673;" href="https://www.igorludgero.com/" target="_blank">https://www.igorludgero.com/</a>.<p>]]></comment>
+                <metarlogistica translate="label,comment">
+                    <label>[Igorludgero] - BusLog</label>
+                    <comment><![CDATA[<p><img style="width: 324px;" src="//www.autoviacao1001.com.br/wp-content/uploads/2016/10/logo-300x75.png"/></p><p style="color: #3945b9; font-weight: bolder;">Para mais informações por favor acesse <a style="color: #142673;" href="http://www.buslog.com.br/" target="_blank">nosso site</a> e entre em contato.<p><p style="color: #3945b9; font-weight: bolder;">Esta extensão foi desenvolvida por Igor Ludgero Miura. Para mais informações acesse <a style="color: #142673;" href="https://www.igorludgero.com/" target="_blank">https://www.igorludgero.com/</a>.<p>]]></comment>
                     <sort_order>2</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>0</show_in_website>
@@ -58,11 +58,21 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </estimated_deadline>
+                        <show_region translate="label,comment">
+                            <label>Show the region?</label>
+                            <comment>Enable this option to show the region the shipping will be delivered.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show_region>
                         <add_days translate="label,comment">
                             <label>Add Days to the estimated deadline</label>
                             <comment>Fill this field to add more days in the estimated deadline. To set the default value stay this field empty.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>50</sort_order>
+                            <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -71,7 +81,7 @@
                             <label>Add an additional cost to the shipping final price.</label>
                             <comment>Fill this field to add an additional value to the final shipping price.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>60</sort_order>
+                            <sort_order>70</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -80,7 +90,7 @@
                             <label>Set the custom shipping message</label>
                             <comment>Set the custom message that will be showed to the customer when he request the shipping calculation. (ex: Entrega em %s. Prazo de %d dia(s) útil(eis).</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>70</sort_order>
+                            <sort_order>80</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -89,7 +99,7 @@
                             <label>% Delivery insurance</label>
                             <comment>This value will be added to the final shipping value for delivery insurance.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>80</sort_order>
+                            <sort_order>90</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -98,13 +108,13 @@
                             <label>% Declared in the electronic invoice</label>
                             <comment>This value will be added to the final shipping value.</comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>90</sort_order>
+                            <sort_order>100</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </percent_nfe_declared>
                     </fields>
-                </metar_logistica>
+                </metarlogistica>
             </groups>
         </carriers>
     </sections>

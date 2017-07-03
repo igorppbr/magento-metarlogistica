@@ -15,12 +15,12 @@ class Igorludgero_Metarlogistica_Model_Mysql4_Cotacao extends Mage_Core_Model_My
 
     public function uploadAndImport(Varien_Object $object)
     {
-        $csvFile = $_FILES['groups']['tmp_name']['metar_logistica']['fields']['import']['value'];
+        $csvFile = $_FILES['groups']['tmp_name']['metarlogistica']['fields']['import']['value'];
 
         try {
 
             $dataObject = $object->getData();
-            $name = $dataObject['groups']['metar_logistica']['fields']['import']['value'];
+            $name = $dataObject['groups']['metarlogistica']['fields']['import']['value'];
 
             if(is_numeric($name) == false) {
 
