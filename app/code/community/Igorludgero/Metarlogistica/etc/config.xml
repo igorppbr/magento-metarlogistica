@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Igorludgero_Metarlogistica>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
         </Igorludgero_Metarlogistica>
     </modules>
     <global>
@@ -110,7 +110,7 @@
                 <active>1</active>
                 <sort_order>10</sort_order>
                 <model>metarlogistica/carrier</model>
-                <title>Metar Logistica Transportadora</title>
+                <title>BusLog Transportadora</title>
                 <sort_order>10</sort_order>
                 <sallowspecific>0</sallowspecific>
             </metarlogistica>
